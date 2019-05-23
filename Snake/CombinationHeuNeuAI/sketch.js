@@ -1,16 +1,16 @@
-const w = 5;
-const ITERATIONS = 1000;
-const NETWORKS = 100;
+const w = 20;
+const ITERATIONS = 500;
+const NETWORKS = 20;
 let globalNNconfig;
 let globalStartCoords;
 let globalFoodCoords = [];
 let games = [];
 let iterator = 0;
-let fps = 1000;
+let fps = 10;
 
 function setup() {
-  createCanvas(20, 20);
-  frameRate(1);
+  createCanvas(200, 200);
+  frameRate(30);
   globalNNconfig = [int(width / w) * int(height / w) * 2, 100, 4]; //nok bevægelighed
   globalStartCoords = [
     [int(width / w) / 2 * w, int(height / w) / 2 * w]
@@ -66,7 +66,7 @@ function draw() {
           maxLength = games[i].getSize();
         }
       }
-      console.log(max, sum, maxLength);
+      console.log("Sumoflength for generation: ", sum, "maxLength: ", maxLength);
       for (let i = games.length - 1; i >= 0; i--) {
         games[i].reset();
         if (games[i] != best) {

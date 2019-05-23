@@ -9,11 +9,11 @@ class Game{
     this.score = -1;
     this.id = id;
   }
-  
+
   getBetter(bestgame){
     this.predictor.improve(bestgame.predictor);
   }
-  
+
   getScore(){
     if(this.score == -1){
       return this.coords.length;
@@ -21,11 +21,11 @@ class Game{
     return this.score; //hvor hurtigt den fik pointene
     //return this.coords.length;
   }
-  
+
   getSize(){
     return this.coords.length;
   }
-  
+
   reset(){
     this.coords = [[globalStartCoords[0][0], globalStartCoords[0][1]]];
     this.foodIndex = 0;
@@ -34,7 +34,7 @@ class Game{
     this.isDead = false;
     this.score = -1;
   }
-  
+
   update(){
     this.move();
     for (var i = this.coords.length - 1; i >= 1; i--) {
@@ -54,7 +54,7 @@ class Game{
       //this.score += 1*(ITERATIONS-iterator)
 	}
   }
-  
+
   checkForDeath(){
     for (var i = this.coords.length - 1; i >= 1; i--) {
 		if(this.coords[i][0] == this.coords[0][0] && this.coords[i][1] == this.coords[0][1]){
@@ -63,7 +63,7 @@ class Game{
     }
     return false;
   }
-  
+
   move(){
     let prediction1 = this.predictor.predict(this.coords, globalFoodCoords[this.foodIndex])
     let prediction2 = predictHeuristically(this.coords[0], globalFoodCoords[this.foodIndex], this.coords)
@@ -80,7 +80,7 @@ class Game{
     this.key = getOutput(maxIndex);
     this.setDirection();
   }
-  
+
   setDirection() {
 	if (this.key === LEFT_ARROW && this.direction[0] != 1) {
 		this.direction = [-1, 0];
@@ -100,7 +100,7 @@ function entrywiseMatrixSum(matrix1, matrix2){
     matrix.push([]);
     for(let j = 0; j < matrix1[i].length; j++){
       //matrix[i].push(matrix1[i][j] + matrix2[i][j]/1500)
-	  matrix[i].push(matrix1[i][j] + matrix2[i][j]/500)
+	  matrix[i].push(matrix1[i][j] + matrix2[i][j]/600)
     }
   }
   return matrix;
