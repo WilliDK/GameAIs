@@ -9,6 +9,8 @@ let active;
 let deltaAngle = rangeOfVision / 300;
 let sensitivity = Math.PI / 60;
 
+console.log("test github")
+
 function setup() {
   //environment
   createCanvas(450, 200);
