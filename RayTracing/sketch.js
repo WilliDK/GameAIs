@@ -76,8 +76,10 @@ function draw() {
   background(0);
   checkForInput();
   constrainPos();
-  for (let i = 0; i < bodies.length; i++) {
-    bodies[i].render();
+  if(document.getElementById("showMazeCheckBox").checked){
+    for (let i = 0; i < bodies.length; i++) {
+      bodies[i].render();
+    }
   }
   for(let i = 0; i < rays.length; i++){
     rays[i].update();
