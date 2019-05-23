@@ -1,21 +1,32 @@
-let pace = -4;
-let spaceBetweenObstacles = 200;
+let pace;
+let spaceBetweenObstacles;
 let distance;
 let obstacles;
-let w = 70;
+let w;
 let games;
 let begin;
-let max = 0;
-let amountofinstances = 500;
-let neuralNetworkConfig = [6, 2];
-let bestLocalScore = -1;
+let max;
+let amountofinstances;
+let neuralNetworkConfig;
+let bestLocalScore;
 let next;
-let bestLocalIndex = -1;
-let localscore = -1;
-let generation = 1;
-let innerspace = 200;
+let bestLocalIndex;
+let localscore;
+let generation;
+let innerspace;
+let fps;
+let LEARNING_RATE;
 
 function setup() {
+  //variables
+  setVariables();
+  max = 0;
+  neuralNetworkConfig = [6, 2];
+  bestLocalScore = -1;
+  bestLocalIndex = -1;
+  localscore = -1;
+  generation = 1;
+  //setup
   createCanvas(500, 500);
   frameRate(60);
   obstacles = [];
@@ -38,6 +49,7 @@ function drawBackground(){
 }
 
 function draw(){
+  setVariables();
   drawBackground();
   for(let i = 0; i < obstacles.length; i++){
     obstacles[i].render();
@@ -47,12 +59,8 @@ function draw(){
       games[i].render();
     }
   }
-  if(mouseIsPressed){
+  for(let i = 0; i < fps; i++){
     update();
-  }else{
-    for(let i = 0; i < 100; i++){
-      update();
-    }
   }
   fill(255);
   textSize(16);

@@ -1,5 +1,5 @@
 let pace = -4;
-let spaceBetweenObstacles = 200;
+let spaceBetweenObstacles = 150;
 let distance;
 let obstacles;
 let w = 70;
@@ -13,7 +13,7 @@ let next;
 let bestLocalIndex = -1;
 let localscore = -1;
 let generation = 1;
-let innerspace = 200;
+let innerspace = 180;
 
 function setup() {
   createCanvas(500, 500);
