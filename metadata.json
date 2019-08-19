@@ -1,0 +1,7 @@
+{
+  "show" : true,
+  "name" : "gameais",
+  "description" : "gamais",
+  "tags" : ["js", "py", "html", "2d animation", "game development", "machine learning", "algorithms"],
+  "view" : null
+}
