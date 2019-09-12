@@ -10,7 +10,8 @@
     "name" : "Flappy Bird AI",
     "show" : true,
     "description" : "A flappy bird AI using neural network",
-    "tags" : ["js", "py", "html", "2d animation", "game development", "machine learning", "algorithms"]
+    "tags" : ["js", "py", "html", "2d animation", "game development", "machine learning", "algorithms"],
+    "view" : "test"
   }
  ]
 }
