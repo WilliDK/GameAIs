@@ -1,7 +1,14 @@
 {
   "show" : true,
-  "name" : "gameais",
-  "description" : "gamais",
-  "tags" : ["js", "py", "html", "2d animation", "game development", "machine learning", "algorithms"],
-  "view" : "random"
+  "multiple" : true,
+  "projects" : [{
+    "name" : "gameais",
+    "description" : "gamais",
+    "tags" : ["js", "py", "html", "2d animation", "game development", "machine learning", "algorithms"]
+  },{
+    "name" : "Flappy Bird AI",
+    "description" : "A flappy bird AI using neural network",
+    "tags" : ["js", "py", "html", "2d animation", "game development", "machine learning", "algorithms"]
+  }
+ ]
 }
